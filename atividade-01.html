@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b20000">
+  <title>Atividade 01 | Economia e Mercado</title>
+
+  <style>
+    :root{
+      --etec-red:#b20000;
+      --etec-red-dark:#8f0000;
+      --black:#111;
+      --gray:#666;
+      --light:#f3f4f6;
+      --line:#ddd;
+      --white:#fff;
+      --danger:#a61b1b;
+      --success:#2e7d32;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      color:#222;
+      background:var(--light);
+      line-height:1.55;
+    }
+
+    .top-strip{height:8px;background:var(--etec-red)}
+
+    header{
+      background:#fff;
+      border-bottom:1px solid var(--line);
+    }
+
+    .header-wrap{
+      width:min(920px,calc(100% - 30px));
+      margin:auto;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      padding:20px 0;
+    }
+
+    .avatar{
+      width:72px;
+      height:72px;
+      object-fit:cover;
+      border-radius:50%;
+      border:3px solid var(--etec-red);
+    }
+
+    .brand{
+      color:var(--etec-red);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:.75rem;
+      font-weight:800;
+    }
+
+    h1{
+      margin:3px 0;
+      color:var(--black);
+      font-size:clamp(1.55rem,4vw,2.2rem);
+    }
+
+    .subtitle{color:var(--gray);font-size:.93rem}
+
+    main{
+      width:min(920px,calc(100% - 30px));
+      margin:26px auto 50px;
+    }
+
+    .box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:15px;
+      padding:22px;
+      margin-bottom:18px;
+      box-shadow:0 7px 18px rgba(0,0,0,.05);
+    }
+
+    h2{
+      margin:0 0 16px;
+      color:var(--etec-red);
+      font-size:1.3rem;
+    }
+
+    .row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .field{margin-bottom:15px}
+
+    label{
+      display:block;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+
+    input,textarea{
+      width:100%;
+      padding:12px;
+      border:1px solid #c9c9c9;
+      border-radius:9px;
+      font:inherit;
+      font-size:16px;
+      background:#fff;
+    }
+
+    textarea{
+      resize:vertical;
+      min-height:125px;
+    }
+
+    input:focus,textarea:focus{
+      outline:3px solid rgba(178,0,0,.12);
+      border-color:var(--etec-red);
+    }
+
+    .question{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      margin-top:18px;
+    }
+
+    .question:first-of-type{
+      border-top:0;
+      padding-top:0;
+      margin-top:0;
+    }
+
+    .question-number{
+      color:var(--etec-red);
+      font-weight:800;
+    }
+
+    .upload{
+      background:#fafafa;
+      border:1px dashed #bdbdbd;
+      border-radius:12px;
+      padding:16px;
+    }
+
+    .note{
+      color:var(--gray);
+      font-size:.86rem;
+      margin-top:7px;
+    }
+
+    .integration-note{
+      margin-top:14px;
+      padding:13px 14px;
+      border-radius:10px;
+      background:#fff6e5;
+      border:1px solid #ecd49a;
+      color:#68531d;
+      font-size:.9rem;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    button,.back{
+      min-height:46px;
+      border-radius:10px;
+      padding:11px 18px;
+      font-weight:800;
+      font-size:15px;
+      text-decoration:none;
+      border:0;
+    }
+
+    button{
+      color:#fff;
+      background:var(--etec-red);
+      cursor:pointer;
+    }
+
+    button:hover{background:var(--etec-red-dark)}
+    button:disabled{opacity:.6;cursor:not-allowed}
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      background:#e8e8e8;
+      color:#333;
+    }
+
+    #message{
+      margin-top:14px;
+      font-weight:700;
+    }
+
+    @media(max-width:650px){
+      .row{grid-template-columns:1fr}
+      .header-wrap{align-items:flex-start}
+      .avatar{width:60px;height:60px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-strip"></div>
+
+  <header>
+    <div class="header-wrap">
+      <img class="avatar" src="prof-junior.png" alt="Professor Junior P. Colombo">
+      <div>
+        <div class="brand">Etec de Mairinque • Extensão Ibiúna</div>
+        <h1>Atividade 01 — Economia e Mercado</h1>
+        <div class="subtitle">1º TANE • Prof. Junior P. Colombo</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <form id="activityForm">
+
+      <section class="box">
+        <h2>Identificação</h2>
+
+        <div class="row">
+          <div class="field">
+            <label for="nome">Nome completo</label>
+            <input id="nome" name="nome" type="text" required>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="turma">Turma</label>
+            <input id="turma" name="turma" type="text" value="1º TANE" readonly>
+          </div>
+
+          <div class="field">
+            <label for="componente">Componente</label>
+            <input id="componente" name="componente" type="text" value="Economia e Mercado" readonly>
+          </div>
+        </div>
+      </section>
+
+      <section class="box">
+        <h2>Respostas</h2>
+
+        <div class="question">
+          <div class="question-number">Questão 01 -</div>
+          <p>Explique o problema econômico da escassez relativa, relacionando fatores de produção limitados e necessidades individuais e coletivas.</p>
+          <textarea name="q1" required></textarea>
+        </div>
+
+        <div class="question">
+          <div class="question-number">Questão 02 -</div>
+          <p>Analise a situação apresentada pelo professor e explique economicamente a alteração observada no comportamento do mercado.</p>
+          <textarea name="q2" required></textarea>
+        </div>
+
+        <div class="question">
+          <div class="question-number">Questão 03 -</div>
+          <p>Analise a situação apresentada pelo professor e explique economicamente o comportamento representado pela curva.</p>
+          <textarea name="q3" required></textarea>
+        </div>
+
+        <div class="question">
+          <div class="question-number">Questão 04 -</div>
+          <p>Interprete a mudança apresentada na curva e explique qual variável, diferente do preço do próprio produto, poderia provocar o fenômeno.</p>
+          <textarea name="q4" required></textarea>
+        </div>
+
+        <div class="question">
+          <div class="question-number">Questão 05 -</div>
+          <p>Interprete a alteração apresentada e explique qual variável relacionada às condições de produção poderia justificá-la.</p>
+          <textarea name="q5" required></textarea>
+        </div>
+
+        <div class="question">
+          <div class="question-number">Questão 06 -</div>
+          <p>Explique o significado econômico do ponto em que as duas curvas se encontram e como o mercado reage quando as quantidades desejadas pelas partes deixam de coincidir.</p>
+          <textarea name="q6" required></textarea>
+        </div>
+      </section>
+
+      <section class="box">
+        <h2>Envio de arquivo</h2>
+
+        <div class="upload">
+          <label for="arquivo">Anexar arquivo</label>
+          <input id="arquivo" name="arquivo" type="file" accept=".pdf,.jpg,.jpeg,.png">
+          <div class="note">Formatos aceitos: PDF, JPG, JPEG e PNG.</div>
+        </div>
+
+        <div class="integration-note">
+          O botão de envio ficará totalmente funcional quando conectarmos esta página
+          ao Google Apps Script do seu sistema de correção e armazenamento no Drive.
+        </div>
+      </section>
+
+      <section class="box">
+        <div class="actions">
+          <button id="sendBtn" type="submit">Enviar atividade</button>
+          <a class="back" href="index.html">Voltar para a turma</a>
+        </div>
+        <div id="message" aria-live="polite"></div>
+      </section>
+
+    </form>
+  </main>
+
+<script>
+  const UPLOAD_ENDPOINT = "";
+
+  const form = document.getElementById("activityForm");
+  const sendBtn = document.getElementById("sendBtn");
+  const message = document.getElementById("message");
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!UPLOAD_ENDPOINT) {
+      message.style.color = "#a61b1b";
+      message.textContent = "O endereço do Google Apps Script ainda precisa ser configurado.";
+      return;
+    }
+
+    const data = new FormData(form);
+
+    sendBtn.disabled = true;
+    message.style.color = "#666";
+    message.textContent = "Enviando atividade...";
+
+    try {
+      const response = await fetch(UPLOAD_ENDPOINT, {
+        method: "POST",
+        body: data
+      });
+
+      if (!response.ok) throw new Error("Falha no envio");
+
+      message.style.color = "#2e7d32";
+      message.textContent = "Atividade enviada com sucesso.";
+    } catch (err) {
+      message.style.color = "#a61b1b";
+      message.textContent = "Não foi possível enviar a atividade. Verifique a integração.";
+    } finally {
+      sendBtn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>

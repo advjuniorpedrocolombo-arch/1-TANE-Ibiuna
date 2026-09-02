@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b20000">
+  <title>Economia e Mercado | 1º TANE - Extensão Ibiúna</title>
+  <style>
+    :root{
+      --etec-red:#b20000;
+      --etec-red-dark:#8f0000;
+      --black:#111111;
+      --gray:#666666;
+      --light:#f5f5f5;
+      --line:#dddddd;
+      --white:#ffffff;
+      --success:#2e7d32;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:#f3f4f6;
+      color:#222;
+      line-height:1.5;
+    }
+
+    .top-strip{
+      height:8px;
+      background:var(--etec-red);
+    }
+
+    header{
+      background:var(--white);
+      border-bottom:1px solid var(--line);
+    }
+
+    .header-wrap{
+      width:min(1120px,calc(100% - 32px));
+      margin:auto;
+      display:grid;
+      grid-template-columns:150px 1fr;
+      gap:28px;
+      align-items:center;
+      padding:28px 0;
+    }
+
+    .photo{
+      width:142px;
+      height:142px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid var(--etec-red);
+      box-shadow:0 8px 20px rgba(0,0,0,.12);
+      background:#fff;
+    }
+
+    .brand{
+      color:var(--etec-red);
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.82rem;
+      margin-bottom:7px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(2rem,4vw,3.15rem);
+      line-height:1.05;
+      color:var(--black);
+    }
+
+    .subtitle{
+      margin:10px 0 0;
+      color:var(--gray);
+      font-size:1.05rem;
+    }
+
+    .teacher{
+      margin-top:13px;
+      color:var(--etec-red);
+      font-weight:700;
+    }
+
+    .nav{
+      background:var(--black);
+      color:#fff;
+    }
+
+    .nav-wrap{
+      width:min(1120px,calc(100% - 32px));
+      margin:auto;
+      display:flex;
+      align-items:center;
+      gap:22px;
+      min-height:48px;
+      font-size:.93rem;
+      font-weight:700;
+    }
+
+    .nav span:first-child{color:#fff}
+    .nav .pill{
+      margin-left:auto;
+      background:var(--etec-red);
+      padding:5px 10px;
+      border-radius:999px;
+      font-size:.78rem;
+    }
+
+    main{
+      width:min(1120px,calc(100% - 32px));
+      margin:30px auto 56px;
+    }
+
+    .welcome{
+      background:var(--white);
+      border-left:6px solid var(--etec-red);
+      border-radius:14px;
+      padding:20px 22px;
+      box-shadow:0 6px 18px rgba(0,0,0,.06);
+      margin-bottom:30px;
+    }
+
+    .welcome strong{color:var(--etec-red)}
+
+    .section-title{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:16px;
+    }
+
+    .section-title h2{
+      margin:0;
+      font-size:1.55rem;
+      color:var(--black);
+    }
+
+    .section-title small{color:var(--gray)}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:22px;
+      box-shadow:0 8px 22px rgba(0,0,0,.06);
+      display:flex;
+      flex-direction:column;
+      min-height:270px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:5px;
+      background:var(--etec-red);
+    }
+
+    .card-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:12px;
+    }
+
+    .activity-no{
+      color:var(--etec-red);
+      font-weight:800;
+      font-size:.86rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .status{
+      color:var(--success);
+      background:#edf7ee;
+      padding:5px 9px;
+      border-radius:999px;
+      font-size:.76rem;
+      font-weight:700;
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      color:var(--black);
+      font-size:1.25rem;
+    }
+
+    .card p{
+      margin:0 0 16px;
+      color:#525252;
+      flex:1;
+    }
+
+    .meta{
+      display:flex;
+      gap:8px 16px;
+      flex-wrap:wrap;
+      color:var(--gray);
+      font-size:.86rem;
+      margin-bottom:18px;
+    }
+
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:46px;
+      padding:11px 18px;
+      background:var(--etec-red);
+      color:#fff;
+      text-decoration:none;
+      border-radius:10px;
+      font-weight:800;
+      transition:.18s ease;
+    }
+
+    .button:hover{
+      background:var(--etec-red-dark);
+      transform:translateY(-1px);
+    }
+
+    footer{
+      background:var(--black);
+      color:#cfcfcf;
+      text-align:center;
+      padding:24px 16px;
+      font-size:.86rem;
+    }
+
+    footer strong{color:#fff}
+
+    @media(max-width:720px){
+      .header-wrap{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+      .photo{margin:auto}
+      .nav-wrap{justify-content:center}
+      .nav .pill{display:none}
+      .grid{grid-template-columns:1fr}
+      .section-title{align-items:flex-start;flex-direction:column}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-strip"></div>
+
+  <header>
+    <div class="header-wrap">
+      <img class="photo" src="prof-junior.png" alt="Professor Junior P. Colombo">
+
+      <div>
+        <div class="brand">Etec de Mairinque • Extensão Ibiúna</div>
+        <h1>Economia e Mercado</h1>
+        <p class="subtitle">Página da turma • 1º TANE • Técnico em Administração</p>
+        <div class="teacher">Prof. Junior P. Colombo</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav">
+    <div class="nav-wrap">
+      <span>ATIVIDADES</span>
+      <span class="pill">2º semestre • 2026</span>
+    </div>
+  </div>
+
+  <main>
+    <section class="welcome">
+      <strong>Bem-vindo(a) à página da turma.</strong><br>
+      Aqui serão disponibilizadas as atividades de Economia e Mercado. Para realizar uma tarefa,
+      clique em <b>Abrir atividade</b> e siga as orientações de preenchimento e envio.
+    </section>
+
+    <div class="section-title">
+      <h2>Atividades disponíveis</h2>
+      <small>Novas atividades serão acrescentadas nesta página.</small>
+    </div>
+
+    <section class="grid">
+
+      <article class="card">
+        <div class="card-top">
+          <span class="activity-no">Atividade 01</span>
+          <span class="status">Disponível</span>
+        </div>
+
+        <h3>Fundamentos de Microeconomia</h3>
+        <p>
+          Atividade dissertativa envolvendo escassez relativa, análise do comportamento de mercado,
+          interpretação de curvas e ponto de equilíbrio.
+        </p>
+
+        <div class="meta">
+          <span>📝 Preenchimento on-line</span>
+          <span>📎 Upload de arquivo</span>
+        </div>
+
+        <a class="button" href="atividade-01.html">
+          Abrir atividade
+        </a>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <strong>Economia e Mercado • 1º TANE</strong><br>
+    Etec de Mairinque — Extensão Ibiúna • Prof. Junior P. Colombo
+  </footer>
+</body>
+</html>
